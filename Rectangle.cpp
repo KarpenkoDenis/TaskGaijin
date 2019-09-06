@@ -1,29 +1,29 @@
 #include "Rectangle.h"
 
-Rectangle::Rectangle(unsigned x, unsigned y, unsigned width, unsigned height)
+Rectangle::Rectangle(unsigned x=0, unsigned y=0, unsigned width=0, unsigned height=0)
 {
-	x_ = x;
-	y_ = y;
-	width_ = width;
-	height_ = height;
+	this->x = x;
+	this->y = y;
+	this->width = width;
+	this->height = height;
 }
 
-unsigned Rectangle::x()
+unsigned Rectangle::get_x()
 {
-	return x_;
+	return x;
 }
 
-unsigned Rectangle::y()
+unsigned Rectangle::get_y()
 {
-	return y_;
+	return y;
 }
 
-unsigned Rectangle::width()
+unsigned Rectangle::get_width()
 {
-	return width_;
+	return width;
 }
 
-unsigned Rectangle::height()
+unsigned Rectangle::get_height()
 {
-	return height_;
+	return height;
 }

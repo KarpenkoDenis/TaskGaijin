@@ -23,9 +23,16 @@ extern int gButtons[6];
 //sv_width and sv_height variables are width and height of screen
 extern unsigned int sv_width,sv_height;
 
+
+Player player;
+
 //These functions called from another thread, when a button is pressed or released
 void win32_key_down(unsigned k){
   if(k==VK_F1) game_quited=true;
+  if(k== VK_LEFT) player.move_left();
+  if(k== VK_RIGHT) player.move_right();
+  
+	  
 }
 void win32_key_up(unsigned){}
 
@@ -35,6 +42,15 @@ static unsigned *shadow_buf=NULL;
 
 void init_game(){
   shadow_buf=new unsigned [sv_width*sv_height];
+
+  //set start place
+  unsigned player_size_width = 50;
+  unsigned player_size_height = 20;
+  player = Player((sv_width - player_size_width) / 2, 
+				  sv_height - player_size_height * 2, 
+				  player_size_width, 
+				  player_size_height);
+  player.set_max_X(sv_width);
 }
 
 void close_game(){
@@ -44,9 +60,9 @@ void close_game(){
 
 void draw_rectangle(unsigned x, unsigned y, unsigned width, unsigned height)
 {
-	for (size_t i = x; i < x + height; i++)
+	for (size_t i = y; i < y + height; i++)
 	{
-		memset(shadow_buf + i* sv_width + y, 250, width * 4);
+		memset(shadow_buf + i* sv_width + x , 250, width * 4);
 	}
 }
 
@@ -57,7 +73,8 @@ void draw_game(){
   
   //here you should draw anything you want in to shadow buffer. (0 0) is left top corner
 
-  draw_rectangle(100, 30, 100, 100);
+  //draw_rectangle(100, 30, 100, 100);
+  draw_rectangle(player.get_x(), player.get_y(), player.get_width(), player.get_height());
 
   w32_update_screen(shadow_buf,sv_width*4);
 }
