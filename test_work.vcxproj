@@ -127,14 +127,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gamethread.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RectangleBase.cpp" />
     <ClCompile Include="svga\MAPPING.CPP" />
     <ClCompile Include="svga\SVGADRV.CPP" />
     <ClCompile Include="svga\Svgawin.cpp" />
     <ClCompile Include="W32.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
@@ -143,12 +145,14 @@
     <ResourceCompile Include="W32.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RectangleBase.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="svga\Svga.h" />
     <ClInclude Include="W32.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

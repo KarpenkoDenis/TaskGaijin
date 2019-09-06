@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Rectangle.h"
+#include "RectangleBase.h"
 
-class Player: public Rectangle
+class Player: public RectangleBase
 {
 	unsigned speed = 3;
 	unsigned max_X = 0;

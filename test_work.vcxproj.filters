@@ -8,10 +8,16 @@
     <ClCompile Include="svga\SVGADRV.CPP" />
     <ClCompile Include="svga\Svgawin.cpp" />
     <ClCompile Include="W32.cpp" />
-    <ClCompile Include="Rectangle.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>GameClasses</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="Ball.cpp">
+      <Filter>GameClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleBase.cpp">
+      <Filter>GameClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
       <Filter>GameClasses</Filter>
     </ClCompile>
   </ItemGroup>
@@ -20,10 +26,16 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="svga\Svga.h" />
     <ClInclude Include="W32.h" />
-    <ClInclude Include="Rectangle.h">
+    <ClInclude Include="Player.h">
       <Filter>GameClasses</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Ball.h">
+      <Filter>GameClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleBase.h">
+      <Filter>GameClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
       <Filter>GameClasses</Filter>
     </ClInclude>
   </ItemGroup>

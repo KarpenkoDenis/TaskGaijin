@@ -1,5 +1,5 @@
 #pragma once
-class Rectangle
+class RectangleBase
 {
 protected:
 	unsigned x;
@@ -7,7 +7,7 @@ protected:
 	unsigned width;
 	unsigned height;
 public:
-	Rectangle(unsigned x, unsigned y, unsigned width, unsigned height);
+	RectangleBase(unsigned x = 0, unsigned y = 0, unsigned width = 0, unsigned height = 0);
 	unsigned get_x();
 	unsigned get_y();
 	unsigned get_width();

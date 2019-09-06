@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(unsigned x, unsigned y, unsigned width, unsigned height):Rectangle(x, y, width, height)
+Player::Player(unsigned x, unsigned y, unsigned width, unsigned height):RectangleBase(x, y, width, height)
 {
 }
 
