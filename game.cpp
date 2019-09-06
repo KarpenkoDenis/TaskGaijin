@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "svga/svga.h"
+#include <utility>
+#include "Rectangle.h"
+#include "Player.h"
 
 //This function update full screen from scrptr. The array should be at least sv_height*scrpitch bytes size;
 void w32_update_screen(void *scrptr,unsigned scrpitch);
@@ -39,12 +42,23 @@ void close_game(){
   shadow_buf=NULL;
 }
 
+void draw_rectangle(unsigned x, unsigned y, unsigned width, unsigned height)
+{
+	for (size_t i = x; i < x + height; i++)
+	{
+		memset(shadow_buf + i* sv_width + y, 250, width * 4);
+	}
+}
+
 //draw the game to screen
 void draw_game(){
   if(!shadow_buf)return;
   memset(shadow_buf,0,sv_width*sv_height*4);
   
   //here you should draw anything you want in to shadow buffer. (0 0) is left top corner
+
+  draw_rectangle(100, 30, 100, 100);
+
   w32_update_screen(shadow_buf,sv_width*4);
 }
 
